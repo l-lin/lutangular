@@ -1,0 +1,98 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <parent>
+        <artifactId>lutece-site-pom</artifactId>
+        <groupId>fr.paris.lutece.tools</groupId>
+        <version>2.0.4</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>site-lutangular</artifactId>
+    <packaging>lutece-site</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>site-lutangular</name>
+
+    <properties>
+        <lutece.core.version>4.1.1</lutece.core.version>
+        <directory.version>3.0.3</directory.version>
+        <rest.version>2.1.0</rest.version>
+        <directory.rest.version>3.0.0</directory.rest.version>
+        <directory.angular.version>1.0.0-SNAPSHOT</directory.angular.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>luteceSnapshot</id>
+            <name>luteceSnapshot</name>
+            <url>http://dev.lutece.paris.fr/snapshot_repository</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>lutece</id>
+            <name>luteceRepository</name>
+            <url>http://dev.lutece.paris.fr/maven_repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>fr.paris.lutece</groupId>
+            <artifactId>lutece-core</artifactId>
+            <type>lutece-core</type>
+            <version>${lutece.core.version}</version>
+        </dependency>
+        <!-- plugin -->
+        <dependency>
+            <groupId>fr.paris.lutece.plugins</groupId>
+            <artifactId>plugin-directory</artifactId>
+            <type>lutece-plugin</type>
+            <version>${directory.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.paris.lutece.plugins</groupId>
+            <artifactId>plugin-rest</artifactId>
+            <type>lutece-plugin</type>
+            <version>${rest.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>fr.paris.lutece.plugins</groupId>
+            <artifactId>module-directory-rest</artifactId>
+            <type>lutece-plugin</type>
+            <version>${directory.rest.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>lutangular</finalName>
+        <plugins>
+            <!-- WAR -->
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <!-- Prevent binaries files to be filtered in another encoding -->
+                    <nonFilteredFileExtensions>
+                        <nonFilteredFileExtension>ico</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>png</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                    </nonFilteredFileExtensions>
+                    <!-- Copy the files from the module -->
+                    <webResources>
+                        <resource>
+                            <directory>../module-directory-angular/yo/dist</directory>
+                            <filtering>true</filtering>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

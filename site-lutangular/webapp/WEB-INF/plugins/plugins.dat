@@ -1,0 +1,6 @@
+core_extensions.installed=1
+lucene.installed=1
+directory.installed=1
+directory.pool=portal
+rest.installed=1
+directory-rest.installed=1

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?><plug-in>
+    <name>directory-rest</name>
+    <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
+    <version>3.0.0</version>
+    <description>module.directory.rest.module.description</description>
+    <documentation/>
+    <installation/>
+    <changes/>
+    <user-guide/>
+    <provider>module.directory.rest.module.provider</provider>
+    <provider-url>http://lutece.paris.fr</provider-url>
+    <icon-url>images/admin/skin/plugins/directory/directory.png</icon-url>
+    <copyright>Copyright 2001-2012 Mairie de Paris</copyright>
+    <core-version-dependency>
+        <min-core-version>3.1.2</min-core-version>
+        <max-core-version/>
+    </core-version-dependency>
+
+    <!-- if the plugin must have a connection pool with parameter : 1 - yes, 0 - no -->
+    <db-pool-required>0</db-pool-required>
+
+    <!-- filters -->
+    <filters>
+        <!-- REST security : Comment the filters if you want to test the REST service with the given JSP -->
+        <!--<filter>-->
+           <!--<filter-name>DirectoryRestSecurity</filter-name>-->
+           <!--<url-pattern>/rest/directory/*</url-pattern>-->
+           <!--<filter-class>fr.paris.lutece.util.signrequest.servlet.HeaderHashRequestFilter</filter-class>-->
+
+           <!--<init-param>-->
+               <!--<param-name>elementsSignature</param-name>-->
+               <!--<param-value/>-->
+           <!--</init-param>-->
+
+           <!--<init-param>-->
+               <!--<param-name>validityTimePeriod</param-name>-->
+               <!--<param-value>0</param-value>-->
+           <!--</init-param>-->
+
+           <!--<init-param>-->
+               <!--<param-name>privateKey</param-name>-->
+               <!--<param-value>change me</param-value>-->
+           <!--</init-param>-->
+       <!--</filter>-->
+    </filters>
+
+</plug-in>
