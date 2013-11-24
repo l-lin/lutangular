@@ -14,7 +14,6 @@
     <name>Module Directory AngularJS</name>
 
     <properties>
-        <directory.rest.version>3.0.0</directory.rest.version>
         <yeoman.version>0.1</yeoman.version>
         <maven.clean.plugin.version>2.5</maven.clean.plugin.version>
     </properties>
@@ -49,7 +48,7 @@
             <groupId>fr.paris.lutece.plugins</groupId>
             <artifactId>module-directory-rest</artifactId>
             <type>lutece-plugin</type>
-            <version>${directory.rest.version}</version>
+            <version>[3.0.0,)</version>
         </dependency>
     </dependencies>
 
@@ -60,6 +59,9 @@
                 <groupId>com.github.trecloux</groupId>
                 <artifactId>yeoman-maven-plugin</artifactId>
                 <version>${yeoman.version}</version>
+                <!--<configuration>-->
+                    <!--<yeomanProjectDirectory>foo</yeomanProjectDirectory>-->
+                <!--</configuration>-->
                 <executions>
                     <execution>
                         <goals>

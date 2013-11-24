@@ -66,33 +66,39 @@
             <type>lutece-plugin</type>
             <version>${directory.rest.version}</version>
         </dependency>
+        <dependency>
+            <groupId>fr.paris.lutece.plugins</groupId>
+            <artifactId>module-directory-angular</artifactId>
+            <type>lutece-plugin</type>
+            <version>${directory.angular.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
         <finalName>lutangular</finalName>
-        <plugins>
-            <!-- WAR -->
-            <plugin>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <!-- Prevent binaries files to be filtered in another encoding -->
-                    <nonFilteredFileExtensions>
-                        <nonFilteredFileExtension>ico</nonFilteredFileExtension>
-                        <nonFilteredFileExtension>png</nonFilteredFileExtension>
-                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>
-                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>
-                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
-                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>
-                    </nonFilteredFileExtensions>
-                    <!-- Copy the files from the module -->
-                    <webResources>
-                        <resource>
-                            <directory>../module-directory-angular/yo/dist</directory>
-                            <filtering>true</filtering>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
-        </plugins>
+        <!--<plugins>-->
+            <!--&lt;!&ndash; WAR &ndash;&gt;-->
+            <!--<plugin>-->
+                <!--<artifactId>maven-war-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; Prevent binaries files to be filtered in another encoding &ndash;&gt;-->
+                    <!--<nonFilteredFileExtensions>-->
+                        <!--<nonFilteredFileExtension>ico</nonFilteredFileExtension>-->
+                        <!--<nonFilteredFileExtension>png</nonFilteredFileExtension>-->
+                        <!--<nonFilteredFileExtension>eot</nonFilteredFileExtension>-->
+                        <!--<nonFilteredFileExtension>svg</nonFilteredFileExtension>-->
+                        <!--<nonFilteredFileExtension>ttf</nonFilteredFileExtension>-->
+                        <!--<nonFilteredFileExtension>woff</nonFilteredFileExtension>-->
+                    <!--</nonFilteredFileExtensions>-->
+                    <!--&lt;!&ndash; Copy the files from the module &ndash;&gt;-->
+                    <!--<webResources>-->
+                        <!--<resource>-->
+                            <!--<directory>../module-directory-angular/yo/dist</directory>-->
+                            <!--<filtering>true</filtering>-->
+                        <!--</resource>-->
+                    <!--</webResources>-->
+                <!--</configuration>-->
+            <!--</plugin>-->
+        <!--</plugins>-->
     </build>
 </project>

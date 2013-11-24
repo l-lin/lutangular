@@ -4,3 +4,4 @@ directory.installed=1
 directory.pool=portal
 rest.installed=1
 directory-rest.installed=1
+directory-angular.installed=1

@@ -40,6 +40,7 @@ import fr.paris.lutece.portal.service.message.SiteMessageException;
 import fr.paris.lutece.portal.service.security.UserNotSignedException;
 import fr.paris.lutece.util.html.HtmlTemplate;
 import fr.paris.lutece.portal.service.template.AppTemplateService;
+import fr.paris.lutece.portal.service.i18n.I18nService;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -48,6 +49,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 public class DirectoryAngularApp implements XPageApplication {
     private static final String TEMPLATE_XPAGE_ANGULAR = "skin/plugins/directory/modules/angular/angular.html";
+    private static final String PROPERTY_XPAGE_PAGETITLE = "module.directory.angular.xpage.pagetitle";
+    private static final String PROPERTY_XPAGE_PATHLABEL = "module.directory.angular.xpage.pathlabel";
 
     /**
      * {@inheritDoc}
@@ -57,6 +60,8 @@ public class DirectoryAngularApp implements XPageApplication {
             UserNotSignedException
     {
         XPage page = new XPage();
+        page.setTitle( I18nService.getLocalizedString( PROPERTY_XPAGE_PAGETITLE, request.getLocale( ) ) );
+        page.setPathLabel( I18nService.getLocalizedString( PROPERTY_XPAGE_PATHLABEL, request.getLocale( ) ) );
 
         HtmlTemplate template = AppTemplateService.getTemplate( TEMPLATE_XPAGE_ANGULAR, request.getLocale( ) );
         page.setContent( template.getHtml( ) );
