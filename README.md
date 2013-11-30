@@ -19,23 +19,23 @@ In order to test this project, you will need the following applications installe
 * [MySQL](http://www.mysql.fr/) or your favorite database 
 * [Ant](http://ant.apache.org/)
 
-## Get the source code of LUTANGULAR
+## Get the source code of Lutangular
 Clone lutangular and start working...
 
 ## Configuration
 * Edit `site-lutangular/webapp/WEB-INF/conf/db.properties`
 * Insert your database information. Example (for a MySQL database):
-```
-	portal.poolservice=fr.paris.lutece.util.pool.service.LuteceConnectionService
-	portal.driver=org.gjt.mm.mysql.Driver
-	portal.url=jdbc:mysql://localhost/lutece?autoReconnect=true&useUnicode=yes&characterEncoding=utf8
-	portal.user=root
-	portal.password=root
-	portal.initconns=2
-	portal.maxconns=50
-	portal.logintimeout=2
-	portal.checkvalidconnectionsql=SELECT 1
-```
+
+    portal.poolservice=fr.paris.lutece.util.pool.service.LuteceConnectionService
+    portal.driver=org.gjt.mm.mysql.Driver
+    portal.url=jdbc:mysql://localhost/lutece?autoReconnect=true&useUnicode=yes&characterEncoding=utf8
+    portal.user=root
+    portal.password=root
+    portal.initconns=2
+    portal.maxconns=50
+    portal.logintimeout=2
+    portal.checkvalidconnectionsql=SELECT 1
+
 ## Installing
 ### For Ubuntu users 
 * Runs the `build_lutangular.sh` SH scripts
@@ -50,15 +50,15 @@ Clone lutangular and start working...
 * Open a Command Prompt (`ctrl+r` then `cmd`)
 * Go to the lutangular project directory root
 * Execute the following commands
-```
-	c:\path_to_lutangular> cd module-directory-angular
-	c:\path_to_lutangular\module-directory-angular> mvn clean install
-	c:\path_to_lutangular\module-directory-angular> cd ..
-	c:\path_to_lutangular> cd site-lutangular
-	c:\path_to_lutangular\site-lutangular> mvn lutece:site-assembly
-	c:\path_to_lutangular\site-lutangular> cd target\lutangular\WEB-INF\sql
-	c:\path_to_lutangular\site-lutangular\target\lutangular\WEB-INF\sql> ant
-```
+
+    c:\path_to_lutangular> cd module-directory-angular
+    c:\path_to_lutangular\module-directory-angular> mvn clean install
+    c:\path_to_lutangular\module-directory-angular> cd ..
+    c:\path_to_lutangular> cd site-lutangular
+    c:\path_to_lutangular\site-lutangular> mvn lutece:site-assembly
+    c:\path_to_lutangular\site-lutangular> cd target\lutangular\WEB-INF\sql
+    c:\path_to_lutangular\site-lutangular\target\lutangular\WEB-INF\sql> ant
+
 * It will generate a war file in `c:\path_to_lutangular\site-lutangular\target`. Copy this war into your Tomcat webapps directory
 * Runs Tomcat
 * Go to `http://localhost:<port>/lutangular/jsp/site/Portal.jsp?page=directory-angular`
