@@ -59,11 +59,9 @@
                 <groupId>com.github.trecloux</groupId>
                 <artifactId>yeoman-maven-plugin</artifactId>
                 <version>${yeoman.version}</version>
-                <!--<configuration>-->
-                    <!--<yeomanProjectDirectory>foo</yeomanProjectDirectory>-->
-                <!--</configuration>-->
                 <executions>
                     <execution>
+                        <phase>compile</phase>
                         <goals>
                             <goal>build</goal>
                         </goals>
@@ -76,6 +74,12 @@
                 <version>${maven.clean.plugin.version}</version>
                 <configuration>
                     <filesets>
+                        <fileset>
+                            <directory>webapp/js</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>webapp/WEB-INF/templates</directory>
+                        </fileset>
                         <fileset>
                             <directory>yo/dist</directory>
                         </fileset>

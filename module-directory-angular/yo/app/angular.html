@@ -1,3 +1,31 @@
-<div ng-app="angularApp">
-    <div class="container" ng-view=""></div>
+<div ng-app="angularApp" class="row-fluid">
+    <div ng-controller="directoryCtrl">
+        <div class="span3">
+            <div class="portlet" >
+                <h3>Liste des annuaires :</h3>
+                <div class="well">
+                    <p ng-repeat="directory in directories">
+                        <button class="btn btn-primary" ng-click="showRecords(directory.Id)">
+                            {{directory.Title}} (ID : {{directory.Id}})
+                        </button>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <div class="portlet" ng-controller="directoryCtrl">
+                <h3>Liste des fiches :</h3>
+                <div class="well">
+                    <ul>
+                        <li ng-repeat="record in records">
+                            {{record.Id}} -&nbsp;
+                            <span ng-repeat="field in record.RecordFields">
+                                {{field.Texte}}
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

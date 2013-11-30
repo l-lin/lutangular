@@ -22,8 +22,8 @@
     <!-- Specific plugin JAVASCRIPT -->
     <javascript-files>
         <javascript-files-scope>xpage</javascript-files-scope>
-        <javascript-file>directory/modules/angular/directory-angular.js</javascript-file>
         <javascript-file>directory/modules/angular/vendor/vendor.js</javascript-file>
+        <javascript-file>directory/modules/angular/directory-angular.js</javascript-file>
     </javascript-files>
 
     <!-- Xpage configuration -->

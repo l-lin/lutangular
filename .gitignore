@@ -1,2 +1,4 @@
 target
 *.iml
+module-directory-angular/webapp/js
+module-directory-angular/webapp/WEB-INF/templates

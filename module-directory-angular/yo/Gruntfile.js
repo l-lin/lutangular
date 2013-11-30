@@ -96,8 +96,10 @@ module.exports = function(grunt) {
         },
         concat: {
             dist: {
-                src: ['app/scripts/app.js', 'app/scripts/controllers/main.js'],
-                dest: '<%= yeoman.dist %>/js/plugins/directory/modules/angular/directory-angular.js'
+                src: [
+                    'app/scripts/app.js'
+                ],
+                dest: '../webapp/js/plugins/directory/modules/angular/directory-angular.js'
             },
             vendor: {
                 options: {
@@ -110,7 +112,7 @@ module.exports = function(grunt) {
                     'app/vendor/angular-sanitize/angular-sanitize.min.js',
                     'app/vendor/angular-route/angular-route.min.js'
                 ],
-                dest: '<%= yeoman.dist %>/js/plugins/directory/modules/angular/vendor/vendor.js'
+                dest: '../webapp/js/plugins/directory/modules/angular/vendor/vendor.js'
             }
         },
         // Put files not handled in other tasks here
@@ -120,7 +122,7 @@ module.exports = function(grunt) {
                     expand: true,
                     dot: true,
                     cwd: '<%= yeoman.app %>',
-                    dest: '<%= yeoman.dist %>/templates/skin/plugins/directory/modules/angular/',
+                    dest: '../webapp/WEB-INF/templates/skin/plugins/directory/modules/angular/',
                     src: [
                         'angular.html',
                         'views/main.html'
