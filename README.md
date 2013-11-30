@@ -23,24 +23,27 @@ In order to test this project, you will need the following applications installe
 Clone lutangular and start working...
 
 ## Configuration
-* Edit `site-lutangular/webapp/WEB-INF/conf/db.properties`
+* Edit `site-lutangular/webapp/WEB-INF/conf/db.properties` 
 * Insert your database information. Example (for a MySQL database):
 
-    portal.poolservice=fr.paris.lutece.util.pool.service.LuteceConnectionService
-    portal.driver=org.gjt.mm.mysql.Driver
-    portal.url=jdbc:mysql://localhost/lutece?autoReconnect=true&useUnicode=yes&characterEncoding=utf8
-    portal.user=root
-    portal.password=root
-    portal.initconns=2
-    portal.maxconns=50
-    portal.logintimeout=2
-    portal.checkvalidconnectionsql=SELECT 1
+```
+portal.poolservice=fr.paris.lutece.util.pool.service.LuteceConnectionService
+portal.driver=org.gjt.mm.mysql.Driver
+portal.url=jdbc:mysql://localhost/lutece?autoReconnect=true&useUnicode=yes&characterEncoding=utf8
+portal.user=root
+portal.password=root
+portal.initconns=2
+portal.maxconns=50
+portal.logintimeout=2
+portal.checkvalidconnectionsql=SELECT 1
+```
 
 ## Installing
 ### For Ubuntu users 
 * Runs the `build_lutangular.sh` SH scripts
 
 > **Note**: If your are compiling a Lutece project for the first time, it might time a while. So you can go grab a cup of coffee and come back in 10~min ;)
+
 > **Note**: This `build_lutangular.sh` SH scripts has only been tested in Ubuntu 13.10
 
 * Runs Tomcat
@@ -51,13 +54,15 @@ Clone lutangular and start working...
 * Go to the lutangular project directory root
 * Execute the following commands
 
-    c:\path_to_lutangular> cd module-directory-angular
-    c:\path_to_lutangular\module-directory-angular> mvn clean install
-    c:\path_to_lutangular\module-directory-angular> cd ..
-    c:\path_to_lutangular> cd site-lutangular
-    c:\path_to_lutangular\site-lutangular> mvn lutece:site-assembly
-    c:\path_to_lutangular\site-lutangular> cd target\lutangular\WEB-INF\sql
-    c:\path_to_lutangular\site-lutangular\target\lutangular\WEB-INF\sql> ant
+```
+c:\pathtolutangular> cd module-directory-angular
+c:\pathtolutangular\module-directory-angular> mvn clean install
+c:\pathtolutangular\module-directory-angular> cd ..
+c:\pathtolutangular> cd site-lutangular
+c:\pathtolutangular\site-lutangular> mvn lutece:site-assembly
+c:\pathtolutangular\site-lutangular> cd target\lutangular\WEB-INF\sql
+c:\pathtolutangular\site-lutangular\target\lutangular\WEB-INF\sql> ant
+```
 
 * It will generate a war file in `c:\path_to_lutangular\site-lutangular\target`. Copy this war into your Tomcat webapps directory
 * Runs Tomcat
@@ -66,4 +71,25 @@ Clone lutangular and start working...
 About this project
 ==================
 
-TODO
+The **module-directory-angular** has been created using [Yeoman](http://yeoman.io/) and the [Maven Yeoman plugin](https://github.com/trecloux/yeoman-maven-plugin).
+Thanks to these tools, it is now possible to create, build, preview and test JS applications and we no longer have to manually download and manage libraries.
+It is also possible to include full JS project into the lifecycle of a Java web application.
+
+## module-directory-angular/yo directory layout
+
+```
+yo/                 --> the source code of the JS Angular application (build with yeoman)
+    app/                --> all of the files to be used in production
+      angular.html      --> app layout file (the main html template file of the app)
+      scripts/          --> javascript files
+        app.js          --> application
+    
+    test/               --> test source files and libraries
+      spec/                     --> unit level specs/tests
+        app.js                      --> specs for controllers
+        
+    bower.json          --> BowerJS package management description
+    Gruntfile.js        --> GruntJS tasks configuration
+    karma.conf.js       --> config file for running unit tests with Karma
+    package.json        --> NodeJS package management description
+```
