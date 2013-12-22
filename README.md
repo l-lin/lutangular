@@ -13,7 +13,7 @@ Getting started
 
 ## Prerequisite
 In order to test this project, you will need the following applications installed:
-* [NodeJS](http://nodejs.org/):	A software platform used to build scalable network applications
+* [NPM](https://npmjs.org/):	A Node Packaged Modules manager
 * [BowerJS](https://github.com/bower/bower): A front-end package manager for the web that runs over Git.
 * [GruntJS](http://gruntjs.com/): A Javascript Task Runner
 * [Maven v3+](http://maven.apache.org/)
